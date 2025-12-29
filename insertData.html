@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Insert Form</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+    .table-fields { display: none; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h2>Insert Data into Any Table</h2>
+
+<form method="post" action="php/insert.php" id="insertForm">
+    <label>Select Table:</label>
+    <select id="tableSelect" name="table">
+        <option value="">--Select Table--</option>
+        <option value="Person">Person</option>
+        <option value="School">School</option>
+        <option value="FamilyOwner">FamilyOwner</option>
+        <option value="House">House</option>
+        <option value="RoomHouse">RoomHouse</option>
+        <option value="Student">Student</option>
+        <option value="Student_RoomHouse">Student_RoomHouse</option>
+        <option value="Contract">Contract</option>
+        <option value="PersonWritesFeedback">PersonWritesFeedback</option>
+        <option value="StudentHobbies">StudentHobbies</option>
+        <option value="StudentInterests">StudentInterests</option>
+    </select>
+
+    <!-- Person Fields -->
+    <div class="table-fields" id="Person">
+        <label>Person ID</label><input type="number" name="PersonID"><br>
+        <label>First Name</label><input type="text" name="FirstName"><br>
+        <label>Last Name</label><input type="text" name="LastName"><br>
+        <label>DOB</label><input type="date" name="DOB"><br>
+        <label>Gender</label>
+        <select name="Gender">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select><br>
+    </div>
+
+    <!-- School Fields -->
+    <div class="table-fields" id="School">
+        <label>School ID</label><input type="number" name="SchoolID"><br>
+        <label>School Name</label><input type="text" name="SchoolName"><br>
+        <label>Street Name</label><input type="text" name="StreetName"><br>
+        <label>Capacity</label><input type="number" name="Capacity"><br>
+        <label>City</label><input type="text" name="City"><br>
+        <label>Zip Code</label><input type="text" name="ZipCode"><br>
+    </div>
+
+    <!-- FamilyOwner Fields -->
+    <div class="table-fields" id="FamilyOwner">
+        <label>Person ID</label><input type="number" name="PersonID"><br>
+        <label>Profession</label><input type="text" name="Profession"><br>
+        <label>Family Size</label><input type="number" name="FamilySize"><br>
+        <label>Language</label><input type="text" name="Language"><br>
+        <label>Bio</label><textarea name="Bio"></textarea><br>
+    </div>
+
+    <!-- House Fields -->
+    <div class="table-fields" id="House">
+        <label>House ID</label><input type="number" name="HouseID"><br>
+        <label>Street Number</label><input type="number" name="StreetNumber"><br>
+        <label>Street Name</label><input type="text" name="StreetName"><br>
+        <label>City</label><input type="text" name="City"><br>
+        <label>Zip Code</label><input type="text" name="ZipCode"><br>
+        <label>Pets Allowed</label>
+        <select name="IsPets"><option value="1">Yes</option><option value="0">No</option></select><br>
+        <label>Smoking Allowed</label>
+        <select name="IsSmoking"><option value="1">Yes</option><option value="0">No</option></select><br>
+        <label>Available Rooms</label><input type="number" name="NoOfAvailableRooms"><br>
+        <label>Total Rooms</label><input type="number" name="TotalNumberOfRooms"><br>
+        <label>Owner ID</label><input type="number" name="OwnerID"><br>
+    </div>
+
+    <!-- RoomHouse Fields -->
+    <div class="table-fields" id="RoomHouse">
+        <label>Room Number</label><input type="number" name="RoomNumber"><br>
+        <label>House ID</label><input type="number" name="HouseID"><br>
+        <label>Rent</label><input type="number" step="0.01" name="Rent"><br>
+        <label>Size</label><input type="number" name="Size"><br>
+        <label>Start Date</label><input type="date" name="StartDate"><br>
+        <label>End Date</label><input type="date" name="EndDate"><br>
+    </div>
+
+    <!-- Student Fields -->
+    <div class="table-fields" id="Student">
+        <label>Person ID</label><input type="number" name="PersonID"><br>
+        <label>Nationality</label><input type="text" name="Nationality"><br>
+        <label>School ID</label><input type="number" name="SchoolID"><br>
+        <label>Year</label><input type="number" name="Year"><br>
+    </div>
+
+    <!-- Student_RoomHouse Fields -->
+    <div class="table-fields" id="Student_RoomHouse">
+        <label>Room Number</label><input type="number" name="RoomNumber"><br>
+        <label>House ID</label><input type="number" name="HouseID"><br>
+        <label>Student ID</label><input type="number" name="StudentID"><br>
+    </div>
+
+    <!-- Contract Fields -->
+    <div class="table-fields" id="Contract">
+        <label>Contract ID</label><input type="number" name="ContractID"><br>
+        <label>Start Date</label><input type="date" name="StartDate"><br>
+        <label>End Date</label><input type="date" name="EndDate"><br>
+        <label>Student ID</label><input type="number" name="StudentID"><br>
+        <label>Owner ID</label><input type="number" name="OwnerID"><br>
+    </div>
+
+    <!-- PersonWritesFeedback Fields -->
+    <div class="table-fields" id="PersonWritesFeedback">
+        <label>Person ID</label><input type="number" name="PersonID"><br>
+        <label>Contract ID</label><input type="number" name="ContractID"><br>
+        <label>Rating</label><input type="number" step="0.1" name="Rating"><br>
+        <label>Feedback Text</label><textarea name="FeedbackText"></textarea><br>
+        <label>Feedback Date</label><input type="date" name="FeedbackDate"><br>
+    </div>
+
+    <!-- StudentHobbies Fields -->
+    <div class="table-fields" id="StudentHobbies">
+        <label>Student ID</label><input type="number" name="StudentID"><br>
+        <label>Hobby</label><input type="text" name="Hobby"><br>
+    </div>
+
+    <!-- StudentInterests Fields -->
+    <div class="table-fields" id="StudentInterests">
+        <label>Student ID</label><input type="number" name="StudentID"><br>
+        <label>Interest</label><input type="text" name="Interest"><br>
+    </div>
+
+    <br>
+    <button type="submit">Insert Data</button>
+</form>
+
+<script>
+const tableSelect = document.getElementById('tableSelect');
+tableSelect.addEventListener('change', function() {
+    document.querySelectorAll('.table-fields').forEach(div => div.style.display = 'none');
+    const selected = this.value;
+    if (selected) document.getElementById(selected).style.display = 'block';
+});
+</script>
+
+<br>
+<a href="index.html">Back to Homepage</a>
+
+</body>
+</html>

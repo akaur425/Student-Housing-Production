@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Record</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Delete a Record</h2>
+
+    <form method="POST" action="php/delete.php">
+        <label for="table">Select Table:</label>
+        <select name="table" id="table">
+            <option value="Person">Person</option>
+            <option value="School">School</option>
+            <option value="FamilyOwner">FamilyOwner</option>
+            <option value="House">House</option>
+            <option value="Student">Student</option>
+            <option value="RoomHouse">RoomHouse</option>
+            <option value="Student_RoomHouse">Student_RoomHouse</option>
+            <option value="Contract">Contract</option>
+            <option value="PersonWritesFeedback">PersonWritesFeedback</option>
+            <option value="StudentHobbies">StudentHobbies</option>
+            <option value="StudentInterests">StudentInterests</option>
+        </select>
+        <br><br>
+
+        <!-- Primary key inputs; dynamic keys can be added if needed -->
+        <label for="pk1">Primary Key 1:</label>
+        <input type="text" name="keys[pk1]" id="pk1" required>
+        <br><br>
+        
+        <label for="pk2">Primary Key 2 (if applicable):</label>
+        <input type="text" name="keys[pk2]" id="pk2">
+        <br><br>
+
+        <button type="submit">Delete Record</button>
+    </form>
+
+    <br>
+    <a href="index.html">Home Page</a>
+</body>
+</html>

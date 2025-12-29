@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Update Record</title>
+<link rel="stylesheet" href="css/style.css">
+<script>
+function loadColumns(tableName) {
+    if (!tableName) return;
+
+    fetch('php/getColumns.php?table=' + tableName)
+        .then(response => response.json())
+        .then(data => {
+            const primarySelect = document.getElementById('primaryKey');
+            const columnSelect = document.getElementById('column');
+
+            primarySelect.innerHTML = '';
+            columnSelect.innerHTML = '';
+
+            data.forEach(col => {
+                const option1 = document.createElement('option');
+                option1.value = col;
+                option1.textContent = col;
+                primarySelect.appendChild(option1);
+
+                const option2 = document.createElement('option');
+                option2.value = col;
+                option2.textContent = col;
+                columnSelect.appendChild(option2);
+            });
+        });
+}
+</script>
+</head>
+<body>
+<h2>Update a Record</h2>
+
+<form method="post" action="php/updateRecord.php">
+    <label>Table Name:</label>
+    <select name="table" required onchange="loadColumns(this.value)">
+        <option value="">--Select Table--</option>
+        <option value="House">House</option>
+        <option value="RoomHouse">RoomHouse</option>
+        <option value="Student">Student</option>
+        <option value="Person">Person</option>
+        <option value="FamilyOwner">FamilyOwner</option>
+        <option value="Contract">Contract</option>
+        <option value="Student_RoomHouse">Student_RoomHouse</option>
+        <option value="StudentHobbies">StudentHobbies</option>
+        <option value="StudentInterests">StudentInterests</option>
+        <option value="PersonWritesFeedback">PersonWritesFeedback</option>
+    </select>
+
+    <label>Primary Key Column:</label>
+    <select name="primaryKey" id="primaryKey" required></select>
+
+    <label>Primary Key Value:</label>
+    <input type="text" name="primaryValue" required />
+
+    <label>Column to Update:</label>
+    <select name="column" id="column" required></select>
+
+    <label>New Value:</label>
+    <input type="text" name="newValue" required />
+
+    <input type="submit" value="Update Record" />
+</form>
+
+<br>
+<a href="index.html">Back to Homepage</a>
+</body>
+</html>

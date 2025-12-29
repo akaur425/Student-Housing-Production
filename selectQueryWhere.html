@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Records</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Filter Records by Table</h1>
+
+    <form method="post" action="php/selectWhereQuery.php">
+        <!-- 1. House filters -->
+        <fieldset>
+            <legend>Filter Houses</legend>
+            <label>City:</label>
+            <input type="text" name="houseCity" placeholder="Enter city name" /><br><br>
+            <label>Street starts with:</label>
+            <input type="text" name="houseStreet" placeholder="Enter street name" /><br><br>
+        </fieldset>
+        <br>
+
+        <!-- 2. RoomHouse filters -->
+        <fieldset>
+            <legend>Filter Rooms</legend>
+            <label>HouseID:</label>
+            <input type="text" name="houseIDRoom" placeholder="Enter HouseID" /><br><br>
+        </fieldset>
+        <br>
+
+        <!-- 3. Student filters -->
+        <fieldset>
+            <legend>Filter Students</legend>
+            <label>Name starts with:</label>
+            <input type="text" name="studentName" placeholder="First or Last name" /><br><br>
+        </fieldset>
+        <br>
+
+        <!-- 4. FamilyOwner filters -->
+        <fieldset>
+            <legend>Filter Family Owners</legend>
+            <label>Name starts with:</label>
+            <input type="text" name="ownerName" placeholder="First or Last name" /><br><br>
+        </fieldset>
+        <br>
+
+        <!-- 5. Contract filters -->
+        <fieldset>
+            <legend>Filter Contracts</legend>
+            <label>StudentID:</label>
+            <input type="text" name="studentIDContract" placeholder="Enter StudentID" /><br><br>
+            <label>OwnerID:</label>
+            <input type="text" name="ownerIDContract" placeholder="Enter OwnerID" /><br><br>
+        </fieldset>
+        <br>
+
+        <!-- 6. StudentHobbies filters -->
+        <fieldset>
+            <legend>Filter Student Hobbies</legend>
+            <label>StudentID:</label>
+            <input type="text" name="studentIDHobby" placeholder="Enter StudentID" /><br><br>
+        </fieldset>
+        <br>
+
+        <!-- 7. StudentInterests filters -->
+        <fieldset>
+            <legend>Filter Student Interests</legend>
+            <label>StudentID:</label>
+            <input type="text" name="studentIDInterest" placeholder="Enter StudentID" /><br><br>
+        </fieldset>
+        <br>
+
+        <!-- 8. PersonWritesFeedback filters -->
+        <fieldset>
+            <legend>Filter Feedbacks</legend>
+            <label>PersonID:</label>
+            <input type="text" name="personIDFeedback" placeholder="Enter PersonID" /><br><br>
+        </fieldset>
+        <br>
+
+        <input type="submit" value="Submit Filters" />
+    </form>
+
+    <br>
+    <a href="index.html">Back to Homepage</a>
+</body>
+</html>
